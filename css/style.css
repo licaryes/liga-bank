@@ -1,0 +1,1008 @@
+/* переменные цветов */
+:root {
+    --os_blue: #2C36F2;
+    --light_grey: #F6F7FF;
+    --os_black: #1F1E25;
+}
+
+/* подключение шрифтов */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto/Roboto-Regular.woff2), url(../fonts/Roboto/Roboto-Regular.woff);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto/Roboto-Medium.woff2), url(../fonts/Roboto/Roboto-Medium.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto/Roboto-Bold.woff2), url(../fonts/Roboto/Roboto-Bold.woff);
+    font-weight: 800;
+}
+
+/* сброс стилей */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s;
+}
+
+/* задание общих стилей */
+
+body {
+    font-family: 'Roboto';
+    color: var(--os_black);
+}
+
+h2 {
+    font-size: 38px;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.container {
+    max-width: 1920px;
+    min-width: 320px;
+    padding: 0 60px;
+    margin: 0 auto;
+}
+
+button {
+    background: var(--os_blue);
+    border-radius: 5px;
+    padding: 15px 35px;
+    color: white;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0 0 10px var(--os_blue);
+}
+
+a:hover {
+    color: var(--os_blue);
+}
+
+/* Начало. Шапка */
+
+header {
+    background: var(--light_grey);
+}
+
+.header_wrapper {
+    display: flex;
+    background: var(--light_grey);
+    padding-top: 25px;
+    padding-bottom: 35px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+header ul {
+    display: flex;
+}
+
+header li {
+    padding: 0 45px 0 0;
+}
+
+header li:last-child {
+    padding: 0;
+}
+
+.logo_and_nav {
+    display: flex;
+    align-items: baseline;
+}
+
+.logo {
+    margin: 0 75px 0 0;
+}
+
+.enter_block svg {
+    transform: translateY(5px);
+    transition: fill 0.2s;
+}
+
+.enter_block span {
+    margin: 0 0 0 10px;
+}
+
+/* анимации */
+
+.enter_block:hover svg {
+    fill: var(--os_blue);
+}
+
+/* Конец. Шапка */
+
+/* Начало. Вкладки */
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+.tabs input[type=radio] {
+    display: none;
+}
+
+.tabs input[type=radio]:checked+label {
+    background: var(--light_grey);
+    border-radius: 5px 5px 0 0;
+}
+
+.tabs label {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 30px 0px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.tabs input[type=radio]:not(:checked)+label {
+    opacity: 0.6;
+}
+
+.tabs img {
+    margin: 0 10px 0 0;
+}
+
+.tab_content {
+    display: none;
+    background: var(--light_grey);
+    width: 100%;
+    padding: 55px 130px 55px 70px;
+}
+
+.tub_content_left {
+    margin: 0 120px 0 0;
+}
+
+.tub_content_left ul li {
+    position: relative;
+    padding: 0 0 0 23px;
+    margin: 0 0 20px 0;
+}
+
+.tub_content_left ul li::before {
+    content: "";
+    position: absolute;
+    background: url(../img/svg/tick.svg);
+    width: 13px;
+    height: 10px;
+    top: 3px;
+    left: 0;
+
+}
+
+.tab_content h3 {
+    font-size: 24px;
+    line-height: 1.5em;
+    padding: 0 0 30px 0;
+}
+
+.button_tab1 {
+    margin: 15px 0 0 0;
+}
+
+#tab1:checked~#tab_content_1,
+#tab2:checked~#tab_content_2,
+#tab3:checked~#tab_content_3,
+#tab4:checked~#tab_content_4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab_content_right {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+
+}
+
+.tab_content_right img {
+    max-width: 100%;
+}
+
+/* анимации */
+
+.tabs input[type=radio]:not(:checked)+label:hover {
+    opacity: 1;
+}
+
+
+/* Конец. Вкладки */
+
+
+/* Начало. Калькулятор */
+
+.calc h3 {
+    margin: 30px 0 30px 0;
+}
+
+h3 {
+
+    font-size: 30px;
+}
+
+.calc_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calc_left {
+    width: 50%;
+}
+
+.calc input[type="text"] {
+    width: 100%;
+    background-color: transparent;
+    font-size: 16px;
+    color: var(--os_black);
+    margin: 10px 0 0 0;
+    border-radius: 5px;
+    border: 1px solid var(--os_black);
+    padding: 20px 40px 20px 25px;
+}
+
+.select_wrapper input {
+    cursor: pointer;
+}
+
+.calc_left .select_arrow svg {
+    fill: transparent
+}
+
+.calc_left .select_arrow {
+    position: absolute;
+    right: 25px;
+    top: 32px;
+    cursor: pointer;
+}
+
+.plus,
+.minus {
+    position: absolute;
+    cursor: pointer;
+    bottom: 19px;
+}
+
+.plus {
+    right: 25px;
+}
+
+.minus {
+    left: 25px;
+    bottom: 25px;
+}
+
+.calc_left .select_wrapper,
+.cost {
+    position: relative;
+}
+
+.options input {
+    text-align: center;
+}
+
+.options label {
+    color: #545454;
+    font-weight: 100;
+    user-select: none;
+}
+
+.calc input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: 0 0;
+    background-color: transparent;
+    margin-top: 15px;
+}
+
+.period::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #c1c2ca;
+    position: absolute;
+    bottom: 12px;
+    left: 0px;
+    z-index: -1;
+}
+
+.period input::-webkit-slider-thumb {
+    width: 15px;
+    background-color: var(--os_blue);
+    height: 15px;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #999;
+    z-index: -1;
+}
+
+.period {
+    position: relative;
+    margin-top: 30px;
+}
+
+.period:last-child {
+    margin-top: 20px;
+}
+
+.calc_right{
+    width: 45%;
+    background-color: var(--light_grey);
+    height: min-content;
+    padding: 70px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+.calc_right ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.calc_right li{
+    width: 45%;
+}
+.calc_right button{
+    margin-top: 30px;
+    width: 100%;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.calc_right input[type="text"]{
+    font-size: 24px;
+    padding: 0;
+    font-weight: 800;
+    border: none;
+    cursor: default;
+}
+
+.calc_right li span{
+    color: #545454;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 4px;
+}
+
+.calc_right h3{
+    margin-top: 0;
+}
+
+.select{
+    position: absolute;
+    top: 65px;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    border: 1px solid #000;
+    border-radius: 0 0 5px 5px;
+}
+
+.select input[type="text"]{
+    font-size: 16px;
+    padding: 20px 25px;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.select li{
+    border-bottom:1px solid #545454;
+}
+.select li:last-child{
+    border-bottom:none;
+}
+
+.select_wrapper2.hidden{
+    display: none;
+}
+
+.select.hidden{
+    display: none;
+}
+
+.select_wrapper2{
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background: transparent;
+    position: fixed;
+}
+
+.calc{
+    margin-bottom: 70px;
+}
+
+
+/* Конец. Калькулятор */
+
+
+
+/* Начало. Карта */
+
+
+.map_wrapper {
+    background: var(--light_grey);
+}
+
+.map_content {
+    display: flex;
+    justify-content: center;
+}
+
+.map_header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    padding-top: 40px;
+}
+
+.point_control {
+    position: relative;
+    margin: 0 20px 0 0;
+}
+
+.point_control input+label {
+    padding: 0 0 0 25px;
+    user-select: none;
+}
+
+.point_control input {
+    display: none;
+}
+
+.point_control input+label::before {
+    content: "";
+    position: absolute;
+    background-image: url(../img/svg/checkbox.svg);
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    bottom: 2px;
+    cursor: pointer;
+}
+
+.point_control input:checked+label::before {
+    background-image: url(../img/svg/checkbox-checked.svg);
+}
+
+/* Конец. Карта */
+
+
+/* Начало. Подвал */
+
+.footer_social svg {
+    fill: var(--os_black);
+    transition: fill 0.3s;
+}
+
+.correction {
+    font-size: 12px;
+    color: rgb(144, 144, 144);
+    font-weight: 100;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: var(--light_grey);
+    margin-top: 100px;
+}
+
+.footer_wrapper {
+    padding: 40px 0 40px 0;
+}
+
+.footer_wrapper,
+.footer_left,
+.footer_right {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_social ul {
+    display: flex;
+    gap: 15px;
+}
+
+.footer_nav ul li {
+    padding: 0 0 10px 0;
+}
+
+.footer_nav ul li:last-child {
+    padding: 0;
+}
+
+.footer_logo,
+.footer_nav {
+    width: 40%;
+}
+
+.footer_phone_2,
+.footer_phone_1 {
+    width: 30%;
+}
+
+.footer_phone_1 a,
+.footer_phone_2 a {
+    position: relative;
+    padding: 0 0 0 26px;
+}
+
+.footer_phone_1 p,
+.footer_phone_2 p {
+    padding: 0 0 0 26px;
+}
+
+.footer_phone_2 a::before {
+    content: "";
+    position: absolute;
+    background: url(../img/svg/phone.svg);
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    left: 0;
+    top: 0;
+}
+
+.footer_phone_1 a::before {
+    content: "";
+    position: absolute;
+    background: url(../img/svg/mobile.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 16px;
+    width: 10px;
+    left: 0;
+    top: 0;
+}
+
+/* Анимации */
+
+.footer_social svg:hover {
+    fill: var(--os_blue);
+}
+
+/* Конец. Подвал */
+
+/* Начало. Модальное окно */
+
+.popup.hidden{
+    display: none;
+}
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0,.5);
+    z-index: 1;
+}
+
+.popup_wrapper{
+    background-color: white;
+    padding: 50px;
+    border: 4px solid var(--os_blue);
+}
+
+
+.popup_content{
+    display: flex;
+    flex-direction: column;
+}
+
+.popup_header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: baseline;
+}
+
+.popup input[type="text"],.popup input[type="password"] {
+    width: 100%;
+    background-color: transparent;
+    font-size: 16px;
+    color: var(--os_black);
+    margin: 10px 0 0 0;
+    border-radius: 5px;
+    border: 1px solid var(--os_black);
+    padding: 20px 40px 20px 25px;
+}
+
+.popup_content button{
+    width: 100%;
+    user-select: none;
+}
+.popup_login,.popup_password{
+    margin-bottom: 20px;
+}
+ 
+.popup_content label{
+    color: #545454;
+    user-select: none;
+}
+
+.popup_content a{
+    margin-top: 5px;
+    display: block;
+    color: #999;
+    text-align: right;
+    user-select: none;
+}
+
+.popup_header button{
+    color: none;
+    background: none;
+    padding: 0;
+}
+
+.popup_header button:hover{
+    box-shadow:none;
+}
+
+.popup_header button:hover path{
+    stroke: var(--os_blue);
+}
+
+.popup_password{
+    position: relative;
+}
+
+.show_password{
+    position: absolute;
+    right: 20px;
+    top:53px;
+    cursor: pointer;
+}
+
+.show_password:hover path{
+    fill: var(--os_blue);
+}
+
+.thx_header button{
+    color: var(--os_black);
+    background: none;
+    padding: 0;
+    position: absolute;
+    right: 7px;
+    top: 5px;
+}
+
+.thx_header button:hover{
+    box-shadow:none;
+}
+
+.thx_header button:hover path{
+    stroke: var(--os_blue);
+}
+
+.thx_wrapper{
+    background-color: white;
+    padding: 30px;
+    position: relative;
+    border: 2px solid var(--os_blue);
+    font-size: 18px;
+}
+
+.thx_header button:hover path{
+    stroke: var(--os_blue);
+}
+
+.thx_header{
+    display: flex;
+    justify-content: right;
+}
+
+/* Конец. Модальное окно */
+
+@media screen and (max-width:1400px){
+    .calc_right input[type="text"]{
+        font-size: 20px;
+    }
+    .calc_right{
+        padding: 25px;
+    }
+
+    .calc_right button{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:1023px) {
+    body {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3,
+    .tabs h3 {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 10px 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .footer_wrapper,
+    .footer_left,
+    .footer_right {
+        flex-direction: column;
+    }
+
+    .footer_logo,
+    .footer_nav,
+    .footer_phone_1,
+    .footer_phone_2 {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .footer_phone_1 p,
+    .footer_phone_2 p {
+        padding: 0;
+    }
+
+    .map_content img {
+        width: 100%;
+    }
+
+    .tabs {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        max-height: 466px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        font-size: 10px;
+
+    }
+
+    .tabs::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .tab_content {
+        display: flex;
+        justify-content: space-between;
+        scroll-snap-align: start;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .tab_content .tub_content_left {
+        max-width: 50%;
+        margin-right: 10px;
+    }
+
+    .tabs label {
+        display: none;
+    }
+
+    .logo {
+        margin-right: 20px;
+    }
+
+    .logo_and_nav li {
+        padding-right: 15px;
+    }
+
+    .header_wrapper {
+        padding: 10px 15px 10px 15px;
+    }
+
+    .enter_block span{
+        display: none;
+    }
+
+    .calc_wrapper{
+        flex-direction: column;
+    }
+
+    .calc_right{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .notvis {
+        display: none;
+    }
+
+    .tab_content_right img {
+        max-width: 90%;
+    }
+
+    .tab_content {
+        padding: 20px;
+    }
+
+    .tab_content .tub_content_left {
+        max-width: 100%;
+        margin-right: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3,
+    .tabs h3 {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .logo {
+        margin: 0;
+        padding: 0;
+    }
+
+    .calc_left {
+        width: 100%;
+    }
+
+    .burger::after,
+    .burger::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        margin: 20px 0 0 0;
+        border-radius: 2px;
+        background-color: var(--os_black);
+    }
+
+    .burger::after {
+        top: -10px;
+    }
+
+    .burger::before {
+        bottom: 10px;
+    }
+
+    .burger {
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin: 14px 22px 20px 0px;
+        border-radius: 2px;
+        background-color: var(--os_black);
+    }
+
+    header li:last-child{
+        padding-right: 15px;
+        padding-bottom: 10px;
+    }
+
+    .logo_and_nav li{
+        border-bottom: 1px solid var(--os_black);
+        padding-bottom: 10px;
+    }
+
+    .vis{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        text-align: end;
+        background-color: var(--light_grey);
+        font-size: 20px;
+        padding: 10px 0px 0px 0px;
+        margin-top: 29px;
+        gap: 10px;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .mobale_right{
+        display: flex;
+    }
+
+    .popup_wrapper{
+        background-color: white;
+        padding: 20px;
+        border: 3px solid var(--os_blue);
+    }    
+
+    .popup_content button{
+        font-size: 15px;
+    }
+
+    .calc_right input[type="text"]{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:460px) {
+
+    body {
+        font-size: 9px;
+        max-height: 300px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3,
+    .tabs h3 {
+        font-weight: 800;
+        font-size: 15px;
+    }
+
+    .correction {
+        font-size: 7px;
+    }
+
+    .tab_content {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .show_password{
+        top:48px;
+    }
+
+    .calc_right{
+        padding: 5px;
+    }
+
+    .calc_right input[type="text"]{
+        font-size: 15px;
+    }
+}
