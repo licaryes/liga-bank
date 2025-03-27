@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -55,9 +54,48 @@
     <main>
 
         <!-- Начало. Слайдр -->
-        <div class="slider">
-
+        <section class="container wrapper_slider">
+        <div class="slider" id="slider">
+            <!-- Слайдер здесь -->
+             <div class="slider_list" id="slider_list">
+                <div class="item_silider" >
+                    
+                   
+                    <img src="/img/slider-bg-main@2x.jpg" id="item1"/>
+                </div>
+                <div class="item_silider" >
+                    <div class="item_silider" id="item1">
+                        <div class="slider_content">
+                            <h1>Лига банк</h1>
+                            <h3>Выгода рядом</h3>
+                            <a href="#calc"><button> Рассчитать кредит</button></a>
+                        </div>
+                        <img src="/img/slider-bg-man@2x.jpg" id="item2"/>
+                    </div>
+                </div>
+                <div class="item_silider">
+                    <div class="slider_content">
+                        <h1>Лига банк</h1>
+                        <h3>Всегда рядом</h3>
+                        <a href="#map"><button>Найти отделение</button></a>
+                    </div>
+                    <div class="item_silider" id="item1">
+                        <img src="/img/slider-bg-girl@2x.jpg" id="item3"/>
+                    </div>
+                </div>
+             </div>
+            
         </div>
+
+        <div class="dots">
+            <ul>
+                <li class="active dot"></li>
+                <li class="dot"></li>
+                <li class="dot"></li>
+            </ul>
+         </div>
+
+        </section>
         <!-- Конец. Слайдр -->
 
         <!-- Начало. Вкладки -->
@@ -154,7 +192,7 @@
         <!-- Конец.Вкладки -->
 
         <!-- Начало. Калькулятор -->
-        <section class="calc">
+        <section class="calc" id="calc">
             <div class="container">
                 <h2>Кредитный калькулятор</h2>
                 <div class="calc_wrapper">
@@ -235,7 +273,7 @@
         <!-- Конец. Калькулятор -->
 
         <!-- Начало. Карта -->
-        <section class="map">
+        <section class="map" id="map">
             <div class="container">
                 <h2>Отделения Лига Банка</h2>
                 <div class="map_wrapper">
@@ -389,7 +427,7 @@
     </div>
 
     <!-- Конец. Модальное окно -->
-
+    <script src="js/slider.js"></script>
     <script src="js/burger_and_popup.js"></script>
     <script src="js/calc.js"></script>
 </body>

@@ -49,6 +49,7 @@ a {
     transition: color 0.2s;
 }
 
+
 /* задание общих стилей */
 
 body {
@@ -60,6 +61,11 @@ h2 {
     font-size: 38px;
     margin-bottom: 40px;
     font-weight: 800;
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: 900;
 }
 
 .container {
@@ -138,6 +144,91 @@ header li:last-child {
 }
 
 /* Конец. Шапка */
+
+
+/* Начало. Слайдер */
+.dots ul{
+    position: absolute;
+    bottom:  20px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    z-index: 2;
+}
+
+.dots ul li{
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    background-color: var(--os_blue);
+    border-radius: 50%;
+    transition: background-color 1s;
+}
+
+.dots ul li.active{
+    background-color: var(--light_grey);
+}
+
+.wrapper_slider{
+    position: relative;
+}
+
+.slider{
+    overflow: hidden;
+    position: relative;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.item_silider{
+    width: 100%;
+}
+
+.item_silider{
+    position: relative;
+}
+
+.slider_content{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40%;
+    grid-template-rows: repeat(3,15%);
+    z-index: 1;
+    justify-items: start;
+    align-items: start;
+}
+
+.item_silider img{
+    width: 100%;
+    max-width: 100vw;
+    height: 600px;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.slider_list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width:max-content;
+    transition: left 1s;
+}
+
+
+
+/* конец. Слайдер */
 
 /* Начало. Вкладки */
 
@@ -740,6 +831,12 @@ footer {
 
 /* Конец. Модальное окно */
 
+
+    
+
+
+
+
 @media screen and (max-width:1400px){
     .calc_right input[type="text"]{
         font-size: 20px;
@@ -751,9 +848,29 @@ footer {
     .calc_right button{
         font-size: 20px;
     }
+
+
 }
+        
+    
+
+
+
 
 @media screen and (max-width:1023px) {
+
+    h1{
+        font-size: 50px;
+    }
+
+    .slider{
+        height: 400px;
+    }
+    
+    .item_silider img{
+        height: 400px;
+    }
+
     body {
         font-size: 14px;
     }
@@ -858,6 +975,8 @@ footer {
 }
 
 @media screen and (max-width:767px) {
+
+   
     .notvis {
         display: none;
     }
@@ -967,7 +1086,36 @@ footer {
     }
 }
 
+@media screen and (max-width:600px) {
+    h1{
+        font-size: 30px;
+    }
+    .slider{
+        height: 300px;
+    }
+    
+    .item_silider img{
+        height: 300px;
+    }
+
+}
+
+
+
+
 @media screen and (max-width:460px) {
+
+
+
+
+    .slider{
+        height: 226px;
+    }
+    
+    .item_silider img{
+        height: 226px;
+    }
+
 
     body {
         font-size: 9px;
@@ -975,7 +1123,7 @@ footer {
     }
 
     h2 {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     h3,
@@ -1005,4 +1153,6 @@ footer {
     .calc_right input[type="text"]{
         font-size: 15px;
     }
+
+   
 }
