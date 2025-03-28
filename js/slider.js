@@ -7,6 +7,7 @@ const slide2 = document.getElementById('item2')
 const slide3 = document.getElementById('item3')
 
 window.addEventListener('resize',(e) => {
+    
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     if (width>1020){
         slide1.src='/img/slider-bg-main@2x.jpg'
@@ -22,6 +23,7 @@ window.addEventListener('resize',(e) => {
         slide2.src='/img/slider-bg-man@1x.jpg'
         slide3.src='/img/slider-bg-girl@1x.jpg'
     }
+    right()
 });
 
 let currentSlide = 1;
